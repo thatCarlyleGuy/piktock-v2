@@ -3,18 +3,36 @@ Piktock with more cloud providers
 
 ## Execution
 ### Digital Ocean:
+```shell
+### Install command line util
+brew install doctl
+
+### Authorize `doctl` with auth token when prompted
+doctl auth init --context piktock-v2
+
+### Verify setup
+doctl account get
+
+
+```
 
 ### Terraform:
-
 For a given env:
-```
-   cd terraform
+```shell
+cd terraform
 
-   terraform -chdir=./applications/server init
+# List available DO regions
+export TF_VAR_do_token=your_do_api_token
+terraform -chdir=./datasources/regions init
+terraform -chdir=./datasources/regions plan -no-color > region-options.txt
 
-   export TF_VAR_do_token=your_do_api_token
-   terraform -chdir=./applications/server plan \
-      -var-file ./env/production.tfvars
+# Plan server infra
+export TF_VAR_do_token=your_do_api_token
+terraform -chdir=./applications/server init
+terraform -chdir=./applications/server plan \
+   -var-file ./env/production.tfvars
+terraform -chdir=./applications/server apply \
+   -var-file ./env/production.tfvars
 ```
 
 ## Setting up vendors:

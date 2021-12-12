@@ -1,6 +1,5 @@
 variable "do_token" {}
 
-
 #db-s-1vcpu-1gb	1 GB	1 vCPU	10 GB	False
 #db-s-1vcpu-2gb	2 GB	1 vCPU	25 GB	True
 #db-s-2vcpu-4gb	4 GB	2 vCPU	38 GB	True
@@ -11,9 +10,11 @@ variable "do_token" {}
 
 variable "database" {
   type = object({
-    name         = string
-    cluster_name = string
-    cluster_size = string
+    name           = string
+    app_user_name  = string
+    cluster_name   = string
+    cluster_size   = string
+    cluster_region = string
   })
 
   description = "Database config"

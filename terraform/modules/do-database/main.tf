@@ -8,6 +8,11 @@ resource "digitalocean_database_cluster" "do_db_cluster" {
   engine     = "pg"
   version    = "11"
   size       = var.database_cluster_size
-  region     = "nyc1"
+  region     = var.database_cluster_region
   node_count = 1
+}
+
+resource "digitalocean_database_user" "do_pg_database_user" {
+  cluster_id = digitalocean_database_cluster.do_db_cluster.id
+  name       = var.database_user_name
 }
