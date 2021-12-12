@@ -10,24 +10,27 @@ brew install doctl
 ### Authorize `doctl` with auth token when prompted
 doctl auth init --context piktock-v2
 
-### Verify setup
-doctl account get
-
+### List instance sizes
+doctl apps tier instance-size list --context piktock-v2
 
 ```
 
 ### Terraform:
 For a given env:
 ```shell
-cd terraform
+# In the terraform folder:
 
 # List available DO regions
-export TF_VAR_do_token=your_do_api_token
 terraform -chdir=./datasources/regions init
 terraform -chdir=./datasources/regions plan -no-color > region-options.txt
 
 # Plan server infra
-export TF_VAR_do_token=your_do_api_token
+export TF_VAR_do_token=api_token
+export TF_VAR_env_admin_jwt_secret=env
+export TF_VAR_env_database_url=env
+export TF_VAR_env_node_env=env
+export TF_VAR_env_port=env
+
 terraform -chdir=./applications/server init
 terraform -chdir=./applications/server plan \
    -var-file ./env/production.tfvars
