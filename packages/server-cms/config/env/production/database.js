@@ -14,8 +14,10 @@ module.exports = () => ({
         username: config.user,
         password: config.password,
         ssl: {
-          rejectUnauthorized: true,
-          ca: process.env.DB_CA_CERT,
+          require: true,
+          rejectUnauthorized: false
+          // rejectUnauthorized: true,
+          // ca: process.env.DB_CA_CERT,
         },
       },
       options: {},
