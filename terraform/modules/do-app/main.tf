@@ -14,7 +14,6 @@ resource "digitalocean_app" "do_service_app" {
       }
 
       source_dir    = var.service_source_dir
-      http_port     = var.service_http_port
       run_command   = var.service_run_command
       build_command = var.service_build_command
 
@@ -29,10 +28,6 @@ resource "digitalocean_app" "do_service_app" {
       env {
         key = "NODE_ENV"
         value = var.service_env_node_env
-      }
-      env {
-        key = "PORT"
-        value = var.service_env_port
       }
     }
   }

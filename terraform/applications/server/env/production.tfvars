@@ -17,10 +17,8 @@ cms_service = {
   "repo_branch": "main"
   "source_dir": "."
 
-  "http_port": "3000"
   "run_command": "yarn workspace server-cms start"
   "build_command": "yarn workspace server-cms build"
 
   "env_node_env": "production"
-  "env_port": "3000"
 }
