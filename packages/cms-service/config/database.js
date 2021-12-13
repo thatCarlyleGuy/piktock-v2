@@ -15,7 +15,7 @@ const getDbConnection = (env) => {
         schema: env('DATABASE_SCHEMA', 'public'), // Not required
         // ssl: env.bool('DATABASE_SSL', false)
         ssl: {
-          // rejectUnauthorized: env.bool('DATABASE_SSL_SELF', false), // For self-signed certificates
+          rejectUnauthorized: env.bool('DATABASE_SSL_SELF', false), // For self-signed certificates
           // ssl: env.bool('DATABASE_SSL', false)
           ca: env('DATABASE_CA_CERT', ''),//fs.readFileSync(`${__dirname}/path/to/your/ca-certificate.crt`).toString(),
         },
