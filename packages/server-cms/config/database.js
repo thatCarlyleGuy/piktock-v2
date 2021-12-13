@@ -8,7 +8,7 @@ module.exports = ({ env }) => ({
       host: config.host,
       port: config.port,
       database: config.database,
-      username: config.user,
+      user: config.user,
       password: config.password,
     },
   },
