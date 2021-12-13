@@ -13,12 +13,12 @@ const getDbConnection = (env) => {
         user: env('DATABASE_USERNAME', 'strapi'),
         password: env('DATABASE_PASSWORD', 'strapi'),
         schema: env('DATABASE_SCHEMA', 'public'), // Not required
-        ssl: env.bool('DATABASE_SSL', false)
-        // ssl: {
+        // ssl: env.bool('DATABASE_SSL', false)
+        ssl: {
           // rejectUnauthorized: env.bool('DATABASE_SSL_SELF', false), // For self-signed certificates
           // ssl: env.bool('DATABASE_SSL', false)
-          // ca: fs.readFileSync(`${__dirname}/path/to/your/ca-certificate.crt`).toString(),
-        // },
+          ca: env('DATABASE_CA_CERT', ''),//fs.readFileSync(`${__dirname}/path/to/your/ca-certificate.crt`).toString(),
+        },
       },
       debug: false,
     }
