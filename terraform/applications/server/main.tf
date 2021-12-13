@@ -21,10 +21,9 @@ module "do_cms_service" {
   service_source_dir = var.cms_service.source_dir
   service_run_command = var.cms_service.run_command
   service_build_command = var.cms_service.build_command
-  service_http_port = var.cms_service.http_port
 
   service_env_admin_jwt_secret = var.env_admin_jwt_secret
   service_env_database_url = var.env_database_url
   service_env_node_env = var.env_node_env
-  service_env_port = var.env_port
+  service_env_db_ca_cert = var.env_db_ca_cert
 }

@@ -12,6 +12,7 @@ variable "env_admin_jwt_secret" {}
 variable "env_database_url" {}
 variable "env_node_env" {}
 variable "env_port" {}
+variable "env_db_ca_cert" {}
 
 variable "database" {
   type = object({
@@ -35,7 +36,6 @@ variable "cms_service" {
     repo_url         = string
     repo_branch      = string
     source_dir       = string
-    http_port        = string
     run_command      = string
     build_command    = string
   })

@@ -29,6 +29,9 @@ resource "digitalocean_app" "do_service_app" {
         key = "NODE_ENV"
         value = var.service_env_node_env
       }
-    }
+      env {
+        key = "DB_CA_CERT"
+        value = var.service_env_db_ca_cert
+      }
   }
 }
