@@ -18,25 +18,17 @@ doctl apps tier instance-size list --context piktock-v2
 ### Terraform:
 For a given env:
 ```shell
-# In the terraform folder:
-
-# List available DO regions
-terraform -chdir=./datasources/regions init
-terraform -chdir=./datasources/regions plan -no-color > region-options.txt
-
-# Plan server infra
+export TF_VAR_app_service_env_admin_jwt_secret=jwt_secret
 export TF_VAR_do_token=api_token
-export TF_VAR_env_admin_jwt_secret=env
-export TF_VAR_env_database_url=env
-export TF_VAR_env_node_env=env
-export TF_VAR_env_port=env
-
-terraform -chdir=./applications/server init
-terraform -chdir=./applications/server plan \
-   -var-file ./env/production.tfvars
-terraform -chdir=./applications/server apply \
-   -var-file ./env/production.tfvars
+cd terraform
+terraform  init
+terraform plan -var-file ./env_production.tfvars
+terraform apply -var-file ./env_production.tfvars
+terraform destroy -var-file ./env_production.tfvars
 ```
+
+##
+Missing database migrations weith Strapi: https://github.com/strapi/strapi/issues/744
 
 ## Setting up vendors:
 ### Digital Ocean & Terraform

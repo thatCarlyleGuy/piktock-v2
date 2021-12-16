@@ -38,26 +38,26 @@ module "do_database" {
 module "do_cms_service_app" {
   source = "./modules/do-apps"
 
-  app_name = var.app_name
+  app_name   = var.app_name
   app_region = var.app_region
 
-  app_service_name = var.app_service_name
-  app_service_do_instance = var.app_service_do_instance
-  app_service_source_dir = var.app_service_source_dir
-  app_service_run_command = var.app_service_run_command
+  app_service_name          = var.app_service_name
+  app_service_do_instance   = var.app_service_do_instance
+  app_service_source_dir    = var.app_service_source_dir
+  app_service_run_command   = var.app_service_run_command
   app_service_build_command = var.app_service_build_command
 
-  app_service_repo_url = var.app_service_repo_url
+  app_service_repo_url    = var.app_service_repo_url
   app_service_repo_branch = var.app_service_repo_branch
 
-  app_service_env_db_host = module.do_database.db_host
-  app_service_env_db_port = module.do_database.db_port
-  app_service_env_db_name = module.do_database.db_name
-  app_service_env_db_user_name = module.do_database.db_user_name
+  app_service_env_db_host          = module.do_database.db_host
+  app_service_env_db_port          = module.do_database.db_port
+  app_service_env_db_name          = module.do_database.db_name
+  app_service_env_db_user_name     = module.do_database.db_user_name
   app_service_env_db_user_password = module.do_database.db_user_password
-  app_service_env_db_ssl_self = var.app_service_env_db_ssl_self
-  app_service_env_db_ca_cert = var.app_service_env_db_ca_cert
-  app_service_env_db_schema = var.app_service_env_db_schema
+  app_service_env_db_ssl_self      = var.app_service_env_db_ssl_self
+  app_service_env_db_ca_cert       = var.app_service_env_db_ca_cert
+  app_service_env_db_schema        = var.app_service_env_db_schema
   app_service_env_admin_jwt_secret = var.app_service_env_admin_jwt_secret
-  app_service_env_node_env = var.app_service_env_node_env
+  app_service_env_node_env         = var.app_service_env_node_env
 }
