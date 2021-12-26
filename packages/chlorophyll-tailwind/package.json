@@ -1,0 +1,21 @@
+{
+  "name": "chlorophyll-tailwind",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -cw"
+  },
+  "devDependencies": {
+    "rollup": "^2.62.0"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.0.7"
+  }
+}
