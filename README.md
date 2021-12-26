@@ -27,14 +27,10 @@ terraform apply -var-file ./env_production.tfvars
 terraform destroy -var-file ./env_production.tfvars
 ```
 
-##
-Missing database migrations weith Strapi: https://github.com/strapi/strapi/issues/744
+## TODOs
+Missing database migrations with Strapi: https://github.com/strapi/strapi/issues/744
 
 ## Setting up vendors:
-### Digital Ocean & Terraform
-https://www.digitalocean.com/community/tutorials/how-to-use-terraform-with-digitalocean
-
-
 ## Vendors:
 - Authentication and Authorization: Auth0
 - Headless CMS: Contentful

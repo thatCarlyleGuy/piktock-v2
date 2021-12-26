@@ -1,4 +1,6 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
