@@ -1,11 +1,7 @@
 module.exports = {
-  content: [
-    "./pages/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./pages/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {},
   },
-  plugins: [
-    require('chlorophyll-tailwind')
-  ],
-}
+  plugins: [require("@cre/chlorophyll-tailwind")],
+};

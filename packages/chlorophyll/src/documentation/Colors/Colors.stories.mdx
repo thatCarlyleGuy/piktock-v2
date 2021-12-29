@@ -1,0 +1,34 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ColorSystem, DarkColorSystem } from './ColorSystem';
+
+<Meta title="Atoms/Colors" component={ColorSystem} />
+
+# Primary Colours
+**Accent colors**: Primary, secondary, and tertiary roles are formed following the same pattern of a 4-color group.
+
+## Primary base color
+- On-primary is applied to content (icons, text, etc.) that sits on top of primary
+- Primary container is applied to elements needing less emphasis than primary
+- On-primary container is applied to content (icons, text, etc.) that sits on top of primary container
+
+Other color roles include:
+- Semantic color role for error, again in the form of the error role itself
+- Neutral roles are used for surfaces and backgrounds, as well as high emphasis text and icons.
+- Example of custom color that can be added and translated into a group of four compatible tones
+
+In total, core scheme colors and custom colors comprise your entire scheme.
+You can choose which colors from the resulting scheme that you want to apply.
+
+<Story name="Primary Colors">
+    <ColorSystem />
+</Story>
+
+## Dark Theme
+Generate dark tones from light tones.
+<Story name="Dark Theme">
+    <DarkColorSystem />
+</Story>
+
+
+# TODO: Mapping accent roles
+Mapping for colors: https://m3.material.io/styles/color/the-color-system/color-roles
