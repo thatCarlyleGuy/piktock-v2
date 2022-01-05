@@ -1,9 +1,57 @@
 import { Meta, Story } from '@storybook/addon-docs';
+import { ShoppingCart } from 'react-feather'
 import Button from './Button';
+import * as Utils from '../../documentation/Utils'
 
-<Meta title="Button" component={Button}/>
+<Meta title="Atoms/Button" component={Button} argTypes={{ onClick: { action: 'clicked' } }} />
 
-<Story name="Primary">
-  <Button className="btn" text="Example text" />
-  <Button className="btn" text="Okay text" />
+## Variants
+Elevated, filled, filled tonal, outlined, and text buttons.
+
+<Story name="Variants">
+    <Utils.HorizontalList placement="left">
+        <Button variant="elevated" label="Elevated" />
+        <Button variant="filled" label="Filled" />
+        <Button variant="outlined" label="Outlined" />
+        <Button variant="filled-tonal" label="Filled Tonal" />
+        <Button variant="text" label="Text" onClick={() => alert('CLICKED')}/>
+    </Utils.HorizontalList>
+    <p></p>
+    <Utils.HorizontalList placement="left">
+        <Button variant="elevated" label="Elevated" disabled />
+        <Button variant="filled" label="Filled" disabled />
+        <Button variant="outlined" label="Outlined" disabled />
+        <Button variant="filled-tonal" label="Filled Tonal" disabled />
+        <Button variant="text" label="Text" disabled onClick={() => alert('CLICKED')}/>
+    </Utils.HorizontalList>
+</Story>
+
+## Icon Buttons
+Icons can be places left or right.
+<Story name="Icons">
+    <Utils.HorizontalList placement="left">
+          <Button label="Shopping Cart" leftIcon={<ShoppingCart size={Button.ICON_SIZE} />} />
+          <Button variant="filled-tonal" label="Shopping Cart" rightIcon={<ShoppingCart size={Button.ICON_SIZE} />} />
+          <Button variant="outlined" leftIcon={<ShoppingCart size={Button.ICON_SIZE} />} />
+    </Utils.HorizontalList>
+</Story>
+
+## Button Sizes
+Small, medium and large. Stick to standard size buttons, though.
+<Story name="Sizes">
+    <Utils.HorizontalList placement="left">
+        <Button size="small" label="Small" />
+        <Button size="medium" label="Medium" />
+        <Button size="large" label="Large" />
+    </Utils.HorizontalList>
+</Story>
+
+## Fill container
+<Story name="Fill Container">
+    <div style={{ width: '300px' }}>
+        <Utils.HorizontalList placement="left">
+            <Button label="Container Filled" fillContainer />
+            <Button variant="filled-tonal" label="Shopping Cart" leftIcon={<ShoppingCart size={Button.ICON_SIZE} />} fillContainer />
+        </Utils.HorizontalList>
+    </div>
 </Story>

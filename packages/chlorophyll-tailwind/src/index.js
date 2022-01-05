@@ -1,6 +1,7 @@
 const Color = require("color");
 const plugin = require("tailwindcss/plugin");
 const { typeScale } = require("./typography");
+const { colorTheme } = require("./colors");
 
 // // https://material.io/design/typography/the-type-system.html#type-scale
 // const fontWeight = {
@@ -180,7 +181,10 @@ module.exports = plugin.withOptions(
     return {
       theme: {
         extend: {
-          colors: colorsTheme,
+          colors: {
+            ...colorsTheme,
+            ...colorTheme(options?.colors || {}),
+          },
         },
       },
     };

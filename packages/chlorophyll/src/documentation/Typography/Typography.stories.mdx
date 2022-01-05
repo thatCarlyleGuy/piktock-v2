@@ -1,16 +1,32 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import TypeScale from './TypeScale';
+import { TypeScale } from './TypeScale';
 import Fonts from './Fonts'
 
-<Meta title="Atoms/Typography" component={TypeScale} />
+<Meta title="Atoms/Type System" component={TypeScale} />
 
-# Fonts
-<Story name="Fonts">
+# Type pairing
+If you’ve found a typeface that works for your app, you may want to complement
+it with a second typeface. If you’ve selected a bold display typeface to style
+headlines, for example, you may want to find a more subtle and readable body
+typeface to go along with it.
+
+<Story name="Type Pairing">
     <Fonts />
 </Story>
 
-
 # Type Scale
+The Material type scale provides fifteen styles to use across your app.
+The styles are grouped into roles with small, medium, and large variations.
+Styles can be customized to meet the needs of your brand and product.
+
 <Story name="Type Scale">
     <TypeScale />
 </Story>
+
+# Customization
+To customize the type scale, begin by applying your selected typefaces to the existing style categories, matching type size and weight first.
+
+From there, make optical adjustments to line height and letter spacing values to accommodate the unique features of your custom typeface.
+
+Heavier fonts may require wider letter spacing, while fonts with long ascenders and descenders will require different line heights.
+

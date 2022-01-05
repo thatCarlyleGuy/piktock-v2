@@ -19,7 +19,9 @@
     "rollup": "^2.62.0"
   },
   "dependencies": {
+    "chroma-js": "^2.1.2",
     "color": "^4.1.0",
+    "lodash": "^4.17.21",
     "tailwindcss": "^3.0.7"
   }
 }

@@ -1,0 +1,145 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { MoreVertical } from 'react-feather'
+import Card from './Card';
+import CardLayout from '../CardLayout'
+import Button from '../Button';
+
+<Meta title="Molecules/Cards" component={Card} />
+
+# Card variants
+Elevated, filled and outlined.
+
+<Story name="Variants">
+    <div style={{
+        width: '26rem',
+        minHeight: '16rem',
+    }}>
+        <Card variant="elevated">
+            <CardLayout.ImageText
+                headline="Elevated"
+                subheading="Hiyeah, partner!"
+                text="This is an elevated variant of the Card."
+            />
+        </Card>
+        <br />
+        <Card variant="filled">
+            <CardLayout.ImageText
+                headline="Filled"
+                subheading="Hiyeah, partner!"
+                text="This is an filled variant of the Card."
+            />
+        </Card>
+        <br />
+        <Card variant="outlined">
+            <CardLayout.ImageText
+                headline="Outlined"
+                subheading="Hiyeah, partner!"
+                text="This is an outlined variant of the Card."
+            />
+        </Card>
+    </div>
+</Story>
+
+# Card Layout Actions
+<Story name="Card Layout Actions">
+    <div style={{
+        width: '32rem',
+        minHeight: '16rem',
+    }}>
+        <Card variant="filled">
+            <CardLayout.ImageText
+                headline="Overflow"
+                subheading="Hiyeah, partner!"
+                text="This is an overflow variant of the Card Actions."
+            />
+            <CardLayout.Actions placement="spaced">
+                <span>
+                    <Button variant="filled-tonal" label="Simple action" />
+                    <Button variant="outlined" label="Maybe" />
+                </span>
+                <span>
+                    <MoreVertical size={Button.LARGE_ICON_SIZE} />
+                </span>
+            </CardLayout.Actions>
+        </Card>
+        <br />
+        <Card variant="elevated">
+            <CardLayout.ImageText
+                headline="Right Aligned"
+                subheading="Hiyeah, partner!"
+                text="This is a right aligned variant of the Card Actions."
+            />
+            <CardLayout.Actions placement="right">
+                <Button variant="text" label="Another option" />
+                <Button variant="filled" label="Main action" />
+            </CardLayout.Actions>
+        </Card>
+    </div>
+    <div style={{
+        width: '24rem',
+        minHeight: '16rem',
+    }}>
+        <br />
+        <Card variant="outlined">
+            <CardLayout.ImageText
+                headline="Container filled"
+                subheading="Hiyeah, partner!"
+                text="This is a container filled variant of the Card Actions."
+            />
+            <CardLayout.Actions placement="right">
+                <Button variant="filled" label="Filled"  fillContainer/>
+            </CardLayout.Actions>
+        </Card>
+    </div>
+</Story>
+
+# Card Content Layout
+<Story name="Content Layout">
+    <div style={{
+        width: '32rem',
+        minHeight: '16rem',
+    }}>
+        <Card variant="outlined">
+            <CardLayout.ImageText
+                headline="Container filled"
+                subheading="Hiyeah, partner!"
+                image="./unsplash-1.jpg"
+                text="This is a container filled variant of the Card Actions."
+            />
+        </Card>
+        <br />
+    </div>
+    <div style={{
+        width: '24rem',
+        minHeight: '8rem',
+    }}>
+        <Card variant="filled">
+            <CardLayout.ImageText
+                headline="Smaller full image"
+                subheading="Hiyeah, partner!"
+                image="./unsplash-2.jpg"
+            />
+            <CardLayout.Actions placement="left">
+                <Button variant="filled" label="Play with doggo" />
+            </CardLayout.Actions>
+        </Card>
+        <br />
+    </div>
+    <div style={{
+        width: '32rem',
+        minHeight: '14rem',
+    }}>
+        <Card variant="elevated">
+            <CardLayout.ImageText
+                headline="Inset Image with a Long Title"
+                image="./unsplash-3.jpg"
+                text="This is some inset text to spruce up the card layout and make it look cool."
+                imageIsInset
+            />
+            <CardLayout.Actions placement="left">
+                <Button variant="filled" label="View details" />
+                <Button variant="outlined" label="Also an option" />
+            </CardLayout.Actions>
+        </Card>
+    </div>
+</Story>

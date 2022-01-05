@@ -1,0 +1,33 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Music, PhoneCall } from 'react-feather'
+import Chip from './Chip';
+import * as Utils from '../../documentation/Utils'
+
+<Meta title="Atoms/Chips" component={Chip} />
+
+# Chip Variants
+
+## Assist variant
+Assist, filter, input and suggestion.
+
+<Story name="Assist Variant">
+    <div>
+        <Utils.HorizontalList>
+            <Chip variant="assist" label="Play music" leftIcon={<Music size={Chip.ICON_SIZE} />} />
+            <Chip variant="assist" label="Elevated" isElevated />
+            <Chip variant="assist" label="Phone call" rightIcon={<PhoneCall size={Chip.ICON_SIZE} />} disabled />
+        </Utils.HorizontalList>
+    </div>
+</Story>
+
+## Filter variant
+<Story name="Filter Variant">
+    <div>
+        <Utils.HorizontalList>
+            <Chip variant="filter" label="Filter" />
+            <Chip variant="filter-active" label="Filter Active" />
+            <Chip variant="filter-unselectable" label="Unselectable" />
+            <Chip variant="filter-menu" label="Menu" />
+        </Utils.HorizontalList>
+    </div>
+</Story>

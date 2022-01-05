@@ -2,10 +2,8 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     fontFamily: {
-      headline: ['Pacifico', 'serif'],
-      body: ['Roboto', 'sans-serif'],
-
-      brand: ['Pacifico', 'serif'],
+      // brand: ['Pacifico', 'serif'],
+      brand: ['Roboto', 'sans-serif'],
       plain: ['Roboto', 'sans-serif'],
     },
   },
@@ -15,7 +13,7 @@ module.exports = {
         primary: '#154c79',
         secondary: '#ad6630',
         tertiary: '#873e23',
-        neutral: '#75756f',
+        neutral: '#535a72',
         success: '#10b981',
         warning: '#f59e0b',
         error: '#bb3535',
